@@ -15,6 +15,7 @@
     --alternative: #4F1282;
     --awesome: #B2ADB6;
     --borderColor: #4F1282;
+    --spanColor: #D671FF;
 }
 
 /* Navbar */
@@ -43,30 +44,128 @@ img[alt='logo']{
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.80);
 }
 
-/* --------------------------------------------- Banner Section ---------------------------------------------------------- */
-/* Wrapper */
-.wrapper {
-    --bg-color: rgb(91, 148, 91);
-    --opacity: .7;
-    width: 50%;
-    aspect-ratio: 1;
-    margin: 2rem auto 2rem;
-    position: relative;
-    text-align: center;
-    &::after {
-        content: '';
-        background: var(--bg-color) url('your_image') no-repeat center center;
-        background-size: cover;
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        z-index: -1;
-        aspect-ratio: 1;
-        opacity: var(--opacity);
-        background-blend-mode: darken;
-    }
+.navbar{
+    transition: all 0.5s;
 }
 
+/* --------------------------------------------- Banner Section ---------------------------------------------------------- */
+.banner-gradient{
+    background-image: linear-gradient(80deg, #4F1282, #8D5499);
+    background-size: cover;
+    background-position: center; 
+    overflow: hidden;
+    font-family: 'poppins';
+    z-index: 0;
+}
+
+.homeContent{
+    margin: 18rem auto 18rem;
+    position: relative;
+    z-index: 0;
+}
+
+.homeContent h2{
+    width: 2rem;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+}
+
+.project-title{
+    z-index: 2;
+    width: 36vw;
+    padding: 2rem 8rem 2rem 6rem;
+    margin: auto;
+    position: relative;
+    border: 1px solid var(--secondary);
+}
+
+.project-title h1{
+    font-size: 5rem;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.title-span{
+    color: var(--spanColor);
+    font-weight: 600;
+}
+
+.up{
+    height: 800px;
+    width: 800px;
+    position: absolute;
+    border-radius: 50%;
+    background-image: linear-gradient(80deg, #4F1282, #8D5499);
+    filter: blur(80px);
+    animation: down 40s infinite;
+    z-index: 0;
+}
+
+.down{
+    position: absolute;
+    right: 0;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-image: linear-gradient(80deg, #222222,  #4F1282);
+    filter: blur(80px);
+    animation: up 30s infinite;
+    z-index: 0;
+}
+.left{
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-image: linear-gradient(80deg, #4F1282, #D671FF);
+    filter: blur(80px);
+    animation: left 30s 1s infinite;
+    z-index: 0;
+}
+.right{
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-image: linear-gradient(80deg, #ababab, #4F1282);
+    filter: blur(80px);
+    animation: right 40s .5s infinite;
+    z-index: 0;
+}
+
+@keyframes down{
+    0%, 100%{
+        top: -100px;
+    }
+    70%{
+        top: 700px;
+    }
+}
+@keyframes up{
+    0%, 100%{
+        bottom: -100px;
+    }
+    70%{
+        bottom: 700px;
+    }
+}
+@keyframes left{
+    0%, 100%{
+        left: -100px;
+    }
+    70%{
+        left: 1300px;
+    }
+}
+@keyframes right{
+    0%, 100%{
+        right: -100px;
+    }
+    70%{
+        right: 1300px;
+    }
+}
 /*---------------------------------------- Media query --------------------------------------------------------------*/
 @media (width < 999px)
 { 
