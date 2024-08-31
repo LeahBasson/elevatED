@@ -21,6 +21,7 @@
     --awesome: #B2ADB6;
     --borderColor: #4F1282;
     --spanColor: #D671FF;
+    --hoverColor: #5E2C89;
 }
 
 /* Navbar */
@@ -43,8 +44,12 @@ img[alt='logo']{
     font-size: 1.1rem;
 }
 
-.nav-link:hover, .nav-link.active{
-    color: var(--primary);
+.nav-link:hover{
+    color: var(--spanColor);
+}
+
+:is(.nav-link.active){
+    color: var(--spanColor) !important;
 }
 
 .navbar-scrolled {
@@ -53,9 +58,10 @@ img[alt='logo']{
 }
 
 .navbar{
+    z-index: 3;
     transition: all 0.5s;
 }
-
+  
 /* ---------------------------------------------           Home Page       ---------------------------------------------------------- */
 /* Banner Section */
 .banner-gradient{
@@ -102,6 +108,10 @@ img[alt='logo']{
     position: relative;
     color: var(--secondary);
     border: 1px solid var(--awesome);
+}
+
+.btnBanner:hover{
+    background-color: var(--hoverColor);
 }
 
 .centerButton{
@@ -230,6 +240,31 @@ img[alt='logo']{
     width: 36vw;
     margin-top: 6rem;
     margin-bottom: 2rem;
+}
+
+/*---------------------------------------- Home Cards Section  --------------------------------------------------------------*/
+
+#cards-home .card{
+    width: 18rem;
+    padding: 0;
+}
+
+#cards-home {
+    display: flex;
+    justify-content: center;
+}
+
+.btnGetStarted{
+    width: 10vw;
+    padding: 0.5rem 1.5rem;
+    background-color: var(--alternative);
+    text-align: center;
+    color: var(--secondary);
+    border: 1px solid var(--awesome);
+}
+
+.btnGetStarted:hover{
+    background-color: var(--hoverColor);
 }
 
 /*---------------------------------------- Media query --------------------------------------------------------------*/
